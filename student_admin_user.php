@@ -11,7 +11,7 @@
         <form method="post" action="logout.php">
             <p>Click here to logout <input type="submit" value="Log out"></p>
             <p>view student page : <a href="student_user.php?id=<?php  echo $user; ?>">student </a> </p>
-            <p>view student page : <a href="admin_user.php?id=<?php  echo $user; ?>">administrator </a> </p>
+            <p>view Administrator page : <a href="admin_user.php?id=<?php  echo $user; ?>">administrator </a> </p>
 
         </form>
 

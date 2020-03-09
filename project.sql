@@ -1,3 +1,20 @@
+/*drop table myclientsession cascade constraints;
+drop table myclient cascade constraints;
+
+create table myclient (
+  clientid varchar2(8) primary key,
+  password varchar2(12)
+);
+
+create table myclientsession (
+  sessionid varchar2(32) primary key,
+  clientid varchar2(8),
+  sessiondate date,
+  foreign key (clientid) references myclient
+);
+*/
+  
+ 
 drop table project_user cascade constraints;
 
 CREATE TABLE project_user (
@@ -39,7 +56,6 @@ values ('karl','karl123',1,0,1);
 --insertion of user student-administrator type
 insert into project_user (id,password,user_type,student_user_type,admin_user_type) 
 values ('kone','kone123',1,1,1);
-
 
 
 commit;
