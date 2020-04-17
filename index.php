@@ -14,12 +14,14 @@
         </p>
         <p> <input type="submit"  value="send"/>  </p>
     </form>
+    <!--
     <p>Login test :</p>
     <ul>    
         <li>Student (user/password) : toto / toto123</li>
         <li>admin (user/password) : karl / karl123</li>
         <li>Student-admin (user/password): kone / kone123</li>
     </ul>
+    -->
 </body>
 
 </html>
