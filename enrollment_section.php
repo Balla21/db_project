@@ -24,7 +24,6 @@
     }
 
 
-
     try{       
         // sql query 
         $result = oci_parse($connection, $sql_course);
@@ -62,7 +61,6 @@
         </form>
 
         <!-- list all sections -->        
-        
             <table>
                 <tr>
                     <th>Section id</th>
@@ -97,6 +95,16 @@
                     
                     ?> </td>
                     <td> <?php echo $row_section["SECT_DEADLINE"]; ?> </td>
+                    
+                    <!-- Button for enrolling into a section -->
+                    <td>
+                            <form method="get" action="enroll.php" >
+                                <input type="hidden" name="id_student" value="<?php echo $user; ?>">
+                                <input type="text" name="id_section" value="<?php echo $row_section["SECT_ID"]; ?>">
+                                <input type="text" name="title_section" value="<?php echo $row_section["TITLE"]; ?>">
+                                <input type="submit" value="Enroll"/>
+                            </form> 
+                        </td>
                 </tr>
                 <?php }  ?>
 

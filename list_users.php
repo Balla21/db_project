@@ -78,8 +78,6 @@
                                 <input type="submit" value="reset password"/>
                             </form>
                         </td> 
-                        
-                  
                 </tr>
             <?php } ?>              
         </table>      
