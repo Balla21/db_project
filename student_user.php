@@ -63,7 +63,7 @@
 
 
 
-    <!-- display section taken by student -->   
+    <!-- display section courses taken by student -->   
         
        <h3><u> Student Section Information </u></h3>
        <?php
@@ -94,7 +94,7 @@
         
             
        ?>
-       
+
        <table>  
             <tr>
                 <td>section</td>
@@ -154,6 +154,14 @@
             $gpa = $sum_course_credit / $total_hours;
             echo  $gpa; ?>  
        </p>
+
+
+    <!-- General section information -->
+    <p><a href=" <?php  echo "general_section.php?id=". $user ; ?>  "> General Section information</a></p>
+
+    <!-- Enrollment section information -->
+    <p><a href=" <?php  echo "enrollment_section.php?id=". $user ; ?>  "> Enrollment Section </a></p>
+
 
 
     </body>
