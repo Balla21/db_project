@@ -67,6 +67,7 @@ create table enroll(
   enr_sect_id varchar2(10),
   enr_grade varchar2(2),
   enr_deadline varchar2(15),
+  enr_completion numeric(1), --not completed(0) / completed(1)
   primary key (enr_stud_id,enr_sect_id),
   foreign key (enr_stud_id) references project_user(user_stud_id),
   foreign key (enr_sect_id) references crse_section(sect_id)
@@ -98,7 +99,7 @@ values ('22090','4:15-5:30pm','Spring','2020',1,10,'cmsc4003','05-01-2020');
 
 --linear algebra
 insert into crse_section (sect_id,sect_time,sect_semester,sect_year,sect_num_student,sect_max_stud,sect_crse_numb,sect_deadline)
-values ('22264','12:00-1:15pm','Spring','2020',1,10,'math3143','05-01-2020');
+values ('22264','12:00-1:15pm','Spring','2019',1,10,'math3143','05-01-2020');
 
 --english
 insert into crse_section (sect_id,sect_time,sect_semester,sect_year,sect_num_student,sect_max_stud,sect_crse_numb,sect_deadline)
@@ -106,8 +107,8 @@ values ('31010','8:00-9:15am','Spring','2020',0,10,'eng1113','05-01-2020');
 
 
 -- insertion into enroll
-insert into enroll(enr_stud_id,enr_sect_id,enr_grade, enr_deadline) values ('tj123456','22090','B','05-01-2020');
-insert into enroll(enr_stud_id,enr_sect_id,enr_grade, enr_deadline) values ('tj123456','22264','A','05-01-2020');
+insert into enroll(enr_stud_id,enr_sect_id,enr_grade, enr_deadline, enr_completion) values ('tj123456','22090','B','05-01-2020', 1);
+insert into enroll(enr_stud_id,enr_sect_id,enr_grade, enr_deadline, enr_completion) values ('tj123456','22264','C','05-01-2020', 1);
 --insert into enroll(enr_stud_id,enr_sect_id,enr_grade, enr_deadline) values ('tj123456','31010','C','05-01-2020');
 
 

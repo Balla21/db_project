@@ -8,7 +8,7 @@
     //get all the sections per courses
      try{
         // connection to the server
-        $connection = oci_connect ("gq047", "pkefhu", "gqiannew2:1521/pdborcl");      
+        $connection = oci_connect ("gq047", "pkefhu", "gqiannew2:1521/pdborcl");    
     }catch(Exception $error){
         echo "cannot connect to the database";
         die();

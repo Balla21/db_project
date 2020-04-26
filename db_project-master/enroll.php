@@ -8,7 +8,7 @@
     // get the student id of the user
     try{
         // connection to the server
-        $connection = oci_connect ("gq047", "pkefhu", "gqiannew2:1521/pdborcl");      
+        $connection = oci_connect ("gq047", "pkefhu", "gqiannew2:1521/pdborcl");     
     }catch(Exception $error){
         echo "cannot connect to the database";
         die();
@@ -56,7 +56,7 @@
     //student not enrolled in section
     else{
         try {
-            $sql_insert = "insert into enroll values ('$student_id','$sect_id','IP','05-01-2020')";
+            $sql_insert = "insert into enroll values ('$student_id','$sect_id','IP','05-01-2020',0)";
             $result_insert = oci_parse($connection, $sql_insert);
             $objConnect = oci_execute($result_insert);
             oci_commit($objConnect); 
