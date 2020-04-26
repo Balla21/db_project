@@ -2,7 +2,7 @@
     $user = $_GET["id"];
     try{
         // connection to the server
-        $connection = oci_connect ("gq047", "pkefhu", "gqiannew2:1521/pdborcl");      
+        $connection = oci_connect ("gq047", "pkefhu", "gqiannew2:1521/pdborcl");
     }catch(Exception $error){
         echo "cannot connect to the database";
         die();
@@ -71,7 +71,7 @@
             
             try{
                 // connection to the server
-                $connection = oci_connect ("gq047", "pkefhu", "gqiannew2:1521/pdborcl");      
+                $connection = oci_connect ("gq047", "pkefhu", "gqiannew2:1521/pdborcl");
             }catch(Exception $error){
                 echo "cannot connect to the database";
                 die();
@@ -101,8 +101,10 @@
                 <td>course #</td>
                 <td>title </td>
                 <td>Semester</td>
+                <td>Year</td>
                 <td>credits #</td>
                 <td>Grade</td>
+		        <td>Completion Status</td>
             </tr>
 
                   
@@ -112,9 +114,10 @@
                 $total_courses = 0;
                 $total_hours = 0;
                 while ( ($row_stud_sect = oci_fetch_assoc($result_stud_section) ) != false)  {
-                    $total_courses += 1;
+                  if( ($row_stud_sect["ENR_COMPLETION"])  ==  1){  
+		    $total_courses += 1;
                     $total_hours += intval($row_stud_sect["CREDIT_HRS"]);
-                    if ( strtolower($row_stud_sect["ENR_GRADE"])  == 'a' ){
+                    if ( strtolower($row_stud_sect["ENR_GRADE"])  == 'a'){
                         $grade = 4.0;
                     }
                     else if ( strtolower($row_stud_sect["ENR_GRADE"])  == 'b' ){
@@ -131,6 +134,7 @@
                     }
                     
                     $sum_course_credit += ($grade * intval($row_stud_sect["CREDIT_HRS"]) );
+		  }
 
             ?>
 
@@ -139,8 +143,13 @@
                 <td><?php echo $row_stud_sect["SECT_CRSE_NUMB"]; ?> </td>
                 <td><?php echo $row_stud_sect["TITLE"]; ?> </td>
                 <td><?php echo $row_stud_sect["SECT_SEMESTER"]; ?> </td>
+		        <td><?php echo $row_stud_sect["SECT_YEAR"]; ?> </td>
                 <td><?php echo $row_stud_sect["CREDIT_HRS"]; ?> </td>
                 <td><?php echo $row_stud_sect["ENR_GRADE"]; ?> </td>
+                <td><?php 
+                	  if( $row_stud_sect["ENR_COMPLETION"] != 1) echo "In progress";
+                	  else  echo "Completed";
+            	?> </td>
 
             </tr>
                     
@@ -149,7 +158,7 @@
        </table>
 
        <p> total number of courses completed: <?php echo $total_courses; ?>  </p>
-       <p> total number of hours : <?php echo $total_hours; ?>  </p>
+       <p> total number of hours earned: <?php echo $total_hours; ?>  </p>
        <p> Average Gpa : <?php
             $gpa = $sum_course_credit / $total_hours;
             echo  $gpa; ?>  
