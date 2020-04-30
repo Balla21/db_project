@@ -3,7 +3,7 @@
         // get user info
         try{
             // connection to the server
-            $connection = oci_connect ("gq047", "pkefhu", "gqiannew2:1521/pdborcl");       
+            $connection = oci_connect ("gq062", "mnnleh", "gqiannew2:1521/pdborcl");       
         }catch(Exception $error){
             echo "cannot connect to the database";
             die();
@@ -48,6 +48,28 @@
             <p>
                 <label>user password : </label><input type="text" name="update_user_password" value="<?php echo $row["PASSWORD"]; ?>"/>
             </p>
+            <p>
+                <label>user lname : </label><input type="text" name="update_user_last_name" value="<?php echo $row["USER_STUD_LNAME"]; ?>"/>
+            </p>
+            <p>
+                <label>user fname : </label><input type="text" name="update_user_first_name" value="<?php echo $row["USER_STUD_FNAME"]; ?>"/>
+            </p>
+            <p>
+                <label>user address : </label><input type="text" name="update_user_address" value="<?php echo $row["USER_STUD_ADDRESS"]; ?>"/>
+            </p>
+            <p>
+                <label>user city : </label><input type="text" name="update_user_city" value="<?php echo $row["USER_STUD_CITY"]; ?>"/>
+            </p>
+            <p>
+                <label>user state : </label><input type="text" name="update_user_state" value="<?php echo $row["USER_STUD_STATE"]; ?>"/>
+            </p>
+            <p>
+                <label>user zipcode : </label><input type="text" name="update_user_zipcode" value="<?php echo $row["USER_STUD_ZIPCODE"]; ?>"/>
+            </p>
+            <p>
+                <label>user status : </label><input type="text" name="update_user_status" value="<?php echo $row["USER_STUD_PROBATION"]; ?>"/>
+            </p>
+
             <p>
                 <label>user type : </label> 
 
