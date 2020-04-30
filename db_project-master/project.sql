@@ -77,6 +77,9 @@ create table enroll(
 --insertion of user student type
 insert into project_user (id,password,user_type,student_user_type,admin_user_type,user_stud_id,user_stud_lname,user_stud_fname,user_stud_age,user_stud_address,user_stud_city,user_stud_state,user_stud_zipcode,user_stud_type,user_stud_gpa,user_stud_probation) 
 values ('toto','toto123',1,1,0,'tj123456','toto','jack',18,'101 uco park','edmond','oklahoma','73034',1,3.5,0);
+insert into project_user (id,password,user_type,student_user_type,admin_user_type,user_stud_id,user_stud_lname,user_stud_fname,user_stud_age,user_stud_address,user_stud_city,user_stud_state,user_stud_zipcode,user_stud_type,user_stud_gpa,user_stud_probation) 
+values ('tata','tata123',1,0,1,'tw654321','toto','will',22,'202 uco park','edmond','oklahoma','73043',1,1.7,1);
+
 
 -- insertion of courses
 -- database
