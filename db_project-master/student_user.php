@@ -115,7 +115,7 @@
                 $total_hours = 0;
                 while ( ($row_stud_sect = oci_fetch_assoc($result_stud_section) ) != false)  {
                   if( ($row_stud_sect["ENR_COMPLETION"])  ==  1){  
-		    $total_courses += 1;
+		            $total_courses += 1;
                     $total_hours += intval($row_stud_sect["CREDIT_HRS"]);
                     if ( strtolower($row_stud_sect["ENR_GRADE"])  == 'a'){
                         $grade = 4.0;
@@ -126,7 +126,7 @@
                     else if ( strtolower($row_stud_sect["ENR_GRADE"])  == 'c' ){
                         $grade = 2.0;
                     }
-                    else if ( strtolower($row_stud_sect["ENR_GRADE"])  == 'b' ){
+                    else if ( strtolower($row_stud_sect["ENR_GRADE"])  == 'd' ){
                         $grade = 1.0;
                     }
                     else{
