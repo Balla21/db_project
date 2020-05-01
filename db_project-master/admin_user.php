@@ -35,6 +35,6 @@
 	<p> Change <a href = " <?php echo 'password.php?id='. $user ; ?>  ">password</a></p>
         <p><a href="add_user.php?id=<?php  echo $user; ?>"> add user </a></p>
         <p><a href="list_users.php?id=<?php  echo $user; ?>"> list of users </a></p>
- 
+	<p><a href="update_grade.php?id=<?php  echo $user; ?>"> update student grade </a></p> 
     </body>
 </html>
